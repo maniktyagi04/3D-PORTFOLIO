@@ -36,16 +36,14 @@ export default function ResumeView() {
             <ArrowLeft className="h-4 w-4" />
             Back to portfolio
           </Link>
-          <Button asChild>
-            <a
-              href={RESUME_PATH}
-              download="Manik_Tyagi_Resume.pdf"
-              className="flex gap-2 text-sm transition-colors hover:text-foreground"
-            >
-              <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-              Download PDF
-            </a>
-          </Button>
+          <a
+            href={RESUME_PATH}
+            download="Manik_Tyagi_Resume.pdf"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 cursor-can-hover gap-2 transition-colors"
+          >
+            <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+            Download PDF
+          </a>
         </motion.div>
       </div>
 
