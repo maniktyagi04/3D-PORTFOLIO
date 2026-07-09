@@ -3,7 +3,7 @@ import { config } from "@/data/config";
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_MAX = 3;
@@ -32,6 +32,7 @@ export async function POST(req: Request) {
       return Response.json({ error: "Too many requests. Please try again later." }, { status: 429 });
     }
 
+    const resend = new Resend(process.env.RESEND_API_KEY || "re_dummy");
     const body = await req.json();
     const {
       success: zodSuccess,
